@@ -25,7 +25,7 @@
           />
           <path d="M12 8a2.5 2.5 0 0 0-2.5 2.5V13h5v-2.5A2.5 2.5 0 0 0 12 8Z" />
         </svg>
-        <span>AI GHD (MVP)</span>
+        <span>AIssue</span>
       </div>
       <nav class="flex items-center space-x-6">
         <button
