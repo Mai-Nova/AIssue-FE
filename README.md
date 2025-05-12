@@ -7,3 +7,5 @@ Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://
 # 설치 사항
 - npm install -g @vue/cli
 - npm install tailwindcss @tailwindcss/vite
+# 추가할 파일
+- gitignore로 .vscode 했기에 .vscode 최상단에 폴더 하나 만들어야 함 
