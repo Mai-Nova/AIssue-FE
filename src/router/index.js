@@ -2,11 +2,11 @@ import { createRouter, createWebHistory } from 'vue-router';
 import LandingPage from '../views/LandingPage.vue';
 import DashboardView from '../views/DashboardView.vue';
 // 다른 뷰 컴포넌트들을 임포트합니다.
-// import RepoListView from '../views/RepoListView.vue';
+import RepoListView from '../views/RepoListView.vue';
+import RepoDetailView from '../views/RepoDetailView.vue';
 // import MyActivityView from '../views/MyActivityView.vue';
 // import DevGuideBotView from '../views/DevGuideBotView.vue';
 // import SettingsView from '../views/SettingsView.vue';
-// import RepoDetailView from '../views/RepoDetailView.vue';
 // import IssueDetailView from '../views/IssueDetailView.vue';
 
 const routes = [
@@ -24,19 +24,19 @@ const routes = [
   },
   // TODO: 다른 라우트들을 여기에 추가합니다.
   // 예시:
-  // {
-  //   path: '/repos',
-  //   name: 'RepoList',
-  //   component: RepoListView,
-  //   meta: { requiresAuth: true }
-  // },
-  // {
-  //   path: '/repo/:repoId', // 동적 라우트 매칭
-  //   name: 'RepoDetail',
-  //   component: RepoDetailView,
-  //   props: true, // 라우트 파라미터를 props로 전달
-  //   meta: { requiresAuth: true }
-  // },
+  {
+    path: '/repos',
+    name: 'RepoList',
+    component: RepoListView,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/repo/:repoId', // 동적 라우트 매칭
+    name: 'RepoDetail',
+    component: RepoDetailView,
+    // props: true, // 라우트 파라미터를 props로 전달
+    meta: { requiresAuth: true }
+  },
   // {
   //   path: '/issue/:issueId',
   //   name: 'IssueDetail',
