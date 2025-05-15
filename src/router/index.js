@@ -26,13 +26,13 @@ const routes = [
     path: "/repos",
     name: "RepoList",
     component: RepoListView,
+    props: true, // 라우트 파라미터를 props로 전달
     meta: { requiresAuth: true },
   },
   {
     path: "/repo/:repoId", // 동적 라우트 매칭
     name: "RepoDetail",
     component: RepoDetailView,
-    // props: true, // 라우트 파라미터를 props로 전달
     meta: { requiresAuth: true },
   },
   // {

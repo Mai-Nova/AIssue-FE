@@ -1,6 +1,5 @@
 <template>
   <div class="bg-white rounded-lg shadow-md p-3.5">
-    <slot>
       <h4 class="font-medium text-slate-800 mb-1 text-sm line-clamp-1">
         {{ issue.title }}
       </h4>
@@ -29,7 +28,6 @@
       >
         상세 분석 보기
       </button>
-    </slot>
   </div>
 </template>
 
