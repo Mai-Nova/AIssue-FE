@@ -1,11 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LandingPage from '../views/LandingPage.vue';
-import DashboardView from '../views/DashboardView.vue';
-// 다른 뷰 컴포넌트들을 임포트합니다.
+import DashBoardView from '../views/DashBoardView.vue';
 // import RepoListView from '../views/RepoListView.vue';
-// import MyActivityView from '../views/MyActivityView.vue';
+import MyActivityView from '../views/MyActivityView.vue';
+import SettingsView from '../views/SettingsView.vue';
 import DevGuideBotView from '../views/DevGuideBotView.vue';
-// import SettingsView from '../views/SettingsView.vue';
 // import RepoDetailView from '../views/RepoDetailView.vue';
 // import IssueDetailView from '../views/IssueDetailView.vue';
 
@@ -19,7 +18,7 @@ const routes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: DashboardView,
+    component: DashBoardView,
     meta: { requiresAuth: true }, // 대시보드는 인증 필요
   },
   // TODO: 다른 라우트들을 여기에 추가합니다.
@@ -44,24 +43,24 @@ const routes = [
   //   props: true,
   //   meta: { requiresAuth: true }
   // },
-  // {
-  //   path: '/my-activity',
-  //   name: 'MyActivity',
-  //   component: MyActivityView,
-  //   meta: { requiresAuth: true }
-  // },
+  {
+    path: '/my-activity',
+    name: 'MyActivityView',
+    component: MyActivityView,
+    meta: { requiresAuth: true }
+  },
+  {
+    path: '/settings',
+    name: 'Settings',
+    component: SettingsView,
+    meta: { requiresAuth: true }
+  },
   {
     path: '/dev-guide-bot',
     name: 'DevGuideBot',
     component: DevGuideBotView,
     meta: { requiresAuth: true }
-  },
-  // {
-  //   path: '/settings',
-  //   name: 'Settings',
-  //   component: SettingsView,
-  //   meta: { requiresAuth: true }
-  // },
+  }
 ];
 
 const router = createRouter({
