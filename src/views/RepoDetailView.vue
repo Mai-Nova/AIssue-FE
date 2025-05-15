@@ -1,17 +1,25 @@
 <template>
-  <!-- 타이틀 -->
-  <RepoDetail v-for="repo in repos" :key="repo.id" :repoTitle="repo.title" />
-  <!-- 탭 메뉴 -->
+  <!-- RepoDetail 컴포넌트는 한 번만! -->
+  <RepoDetail
+    :key="currentRepo.id"
+    :repoTitle="currentRepo.title"
+    :repoUrl="currentRepo.url"
+    :tab="tabs[activeTabIndex]"
+    :tabs="tabs"
+    @update:tab="activeTabIndex = $event"
+  ></RepoDetail>
+
+  <!-- 탭 버튼은 여기에만 둠 -->
   <div class="flex space-x-6 border-b border-gray-200 mb-4 text-sm font-medium">
     <button
       v-for="(tab, index) in tabs"
       :key="tab.id"
-      @click="activeIndex = index"
+      @click="activeTabIndex = index"
       class="relative pb-2"
     >
       <span
         :class="
-          activeIndex === index
+          activeTabIndex === index
             ? 'text-indigo-600 font-semibold'
             : 'text-gray-500'
         "
@@ -19,33 +27,23 @@
         {{ tab.title }}
       </span>
       <span
-        v-show="activeIndex === index"
+        v-show="activeTabIndex === index"
         class="absolute left-0 -bottom-0.5 w-full h-0.5 bg-indigo-600"
       ></span>
     </button>
   </div>
-  <RepoDetail :tab="tabs[activeIndex]"></RepoDetail>
-  <div>
-    <div class="relative bg-white rounded-lg shadow-md p-3.5 mb-2">
-      <h4 class="font-medium text-slate-800 mb-1 text-sm line-clamp-1"></h4>
-      <p class="text-xs text-slate-600 mb-2 line-clamp-2"></p>
-      <a href=""></a>
-    </div>
-  </div>
 </template>
 
 <script>
-import { ref, onMounted } from "vue";
-import { useRouter } from "vue-router";
-import { mockRepoData } from "../mockData.js";
+import { ref, computed } from "vue";
 import RepoDetail from "../components/RepoDetail.vue";
+import { mockRepoData } from "../mockData.js";
 
 export default {
   components: {
     RepoDetail,
   },
   setup() {
-    const router = useRouter();
     const repos = ref([
       {
         id: mockRepoData.nodejs.id,
@@ -78,8 +76,9 @@ export default {
 
     const activeRepoIndex = ref(0);
     const activeTabIndex = ref(0);
+    const currentRepo = computed(() => repos.value[activeRepoIndex.value]);
 
-    return { repos, tabs, activeRepoIndex, activeTabIndex };
+    return { repos, tabs, activeTabIndex, currentRepo };
   },
 };
 </script>
