@@ -1,6 +1,14 @@
 <template>
-  <h1>저장소 탐색</h1>
-  <h4>내가 추가한 저장소</h4>
+  <div>
+    <header class="mb-6">
+      <h1 class="text-2xl font-semibold text-slate-800">
+      {{ title }}
+      </h1>
+    </header>
+    <h2 class="text-lg font-semibold text-slate-700 mb-3">
+      {{ subTitle }}
+    </h2>
+  </div>
   <div id="aside">
     <div class="absolute top-4 right-4 flex items-center space-x-2">
       <label for="githubUrl" class="sr-only">저장소 검색</label>
@@ -9,7 +17,7 @@
         v-model="githubUrl"
         type="text"
         placeholder="저장소 이름 또는 URL 검색"
-        class="border border-gray-300 rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
+        class="border border-gray-300 bg-white rounded px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500"
       />
       <button
         @click="$emit('add-repo', repo.id)"
@@ -58,5 +66,11 @@ export default {
 
     return { repos };
   },
+  data() {
+    return{
+      title: "저장소 관리",
+			subTitle: "내가 추가한 저장소"
+    }
+  }
 };
 </script>

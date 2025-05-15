@@ -15,11 +15,6 @@
       <p class="text-xs add text-slate-600 mb-3 line-clamp-2 ">
         언어: <b>{{ repo.language }}</b>&nbsp;&nbsp;stars: <b>{{ repo.stars }}</b>&nbsp;&nbsp;forks: <b>{{ repo.forks }}</b>
       </p>     
-      <div class="flex items-center justify-between text-xs mb-2">
-        <div class="flex space-x-1">
-        </div>
-      </div>
-
   </div>
 </template>
 

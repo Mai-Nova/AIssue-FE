@@ -1,12 +1,11 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LandingPage from '../views/LandingPage.vue';
 import DashboardView from '../views/DashboardView.vue';
-// 다른 뷰 컴포넌트들을 임포트합니다.
-// import RepoListView from '../views/RepoListView.vue';
-// import MyActivityView from '../views/MyActivityView.vue';
-// import DevGuideBotView from '../views/DevGuideBotView.vue';
-// import SettingsView from '../views/SettingsView.vue';
-// import RepoDetailView from '../views/RepoDetailView.vue';
+import RepoListView from '../views/RepoListView.vue';
+import RepoDetailView from '../views/RepoDetailView.vue';
+import MyActivityView from '../views/MyActivityView.vue';
+import SettingsView from '../views/SettingsView.vue';
+import DevGuideBotView from '../views/DevGuideBotView.vue';
 // import IssueDetailView from '../views/IssueDetailView.vue';
 
 const routes = [
@@ -33,6 +32,7 @@ const routes = [
     path: "/repo/:repoId", // 동적 라우트 매칭
     name: "RepoDetail",
     component: RepoDetailView,
+    props: true, // 라우트 파라미터를 props로 전달
     meta: { requiresAuth: true },
   },
   // {
