@@ -28,8 +28,8 @@
         </div> -->
         </div>
         <div
-        v-for="(message, index) in messages"
-        :key="index"
+        v-for="(message) in messages"
+        :key="message.id"
         class="flex"
         :class="{ 'justify-end': message.sender === 'user', 'justify-start': message.sender === 'bot' }"
         >
@@ -105,6 +105,7 @@ setup() {
         const messageText = input.value.trim()
         
         messages.value.push({
+        id: Date.now() + Math.random(),
         sender: 'user',
         text: messageText,
         })    
