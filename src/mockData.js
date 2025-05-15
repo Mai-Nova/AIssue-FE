@@ -106,10 +106,18 @@ export const mockIssueData = {
   },
 };
 
+export const mockMyActivityData = {
+  totalScore: 30,
+  solvedIssues: [
+    { issueId: 1, title: "이슈 제목 1", repoName: "저장소 1", points: 10 },
+    { issueId: 2, title: "이슈 제목 2", repoName: "저장소 2", points: 20 },
+  ],
+};
+
 // 이 데이터들은 실제 애플리케이션에서는 로그인 상태, 사용자 활동 등에 따라 동적으로 변경되어야 합니다.
 // Vuex, Pinia 또는 Composition API의 ref/reactive를 사용하여 상태를 관리하는 것이 좋습니다.
-export let userSolvedIssues = []; // 사용자가 해결한 이슈 목록 (초기값은 비어있음)
-export let userTotalScore = 0; // 사용자 총 점수
+export let userSolvedIssues = mockMyActivityData.solvedIssues; // 사용자가 해결한 이슈 목록 (초기값은 비어있음)
+export let userTotalScore = mockMyActivityData.totalScore; // 사용자 총 점수
 export const USER_GITHUB_USERNAME = 'DevSorceress'; // 예시 사용자 이름
 export let myAddedRepoIds = ['vscode', 'nodejs']; // 사용자가 추가한 저장소 ID 목록
 
