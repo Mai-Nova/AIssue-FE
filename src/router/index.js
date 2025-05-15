@@ -2,10 +2,9 @@ import { createRouter, createWebHistory } from 'vue-router';
 import LandingPage from '../views/LandingPage.vue';
 import DashBoardView from '../views/DashBoardView.vue';
 // import RepoListView from '../views/RepoListView.vue';
-// 다른 뷰 컴포넌트들을 임포트합니다.
 import MyActivityView from '../views/MyActivityView.vue';
-// import DevGuideBotView from '../views/DevGuideBotView.vue';
 import SettingsView from '../views/SettingsView.vue';
+import DevGuideBotView from '../views/DevGuideBotView.vue';
 // import RepoDetailView from '../views/RepoDetailView.vue';
 // import IssueDetailView from '../views/IssueDetailView.vue';
 
@@ -50,18 +49,18 @@ const routes = [
     component: MyActivityView,
     meta: { requiresAuth: true }
   },
-  // {
-  //   path: '/dev-guide-bot',
-  //   name: 'DevGuideBot',
-  //   component: DevGuideBotView,
-  //   meta: { requiresAuth: true }
-  // },
   {
     path: '/settings',
     name: 'Settings',
     component: SettingsView,
     meta: { requiresAuth: true }
   },
+  {
+    path: '/dev-guide-bot',
+    name: 'DevGuideBot',
+    component: DevGuideBotView,
+    meta: { requiresAuth: true }
+  }
 ];
 
 const router = createRouter({
