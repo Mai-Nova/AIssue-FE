@@ -70,7 +70,7 @@ export default {
       }, 1000);
     },
     navigateToIssue(issueId) {
-      alert(`이슈 ${issueId}로 이동합니다.`); // 실제로는 라우팅 또는 페이지 이동 로직 추가
+      this.$router.push(`/issues/${issueId}`);
     },
   },
   mounted() {

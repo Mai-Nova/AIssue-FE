@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
 import LandingPage from '../views/LandingPage.vue';
-import DashboardView from '../views/DashBoardView.vue';
+import DashBoardView from '../views/DashBoardView.vue';
 // import RepoListView from '../views/RepoListView.vue';
 // 다른 뷰 컴포넌트들을 임포트합니다.
 import MyActivityView from '../views/MyActivityView.vue';
@@ -19,7 +19,7 @@ const routes = [
   {
     path: '/dashboard',
     name: 'Dashboard',
-    component: DashboardView,
+    component: DashBoardView,
     meta: { requiresAuth: true }, // 대시보드는 인증 필요
   },
   // TODO: 다른 라우트들을 여기에 추가합니다.

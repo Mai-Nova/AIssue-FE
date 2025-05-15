@@ -1,4 +1,3 @@
-<!-- filepath: c:\Users\USER\Downloads\AI_GitHub (2)\public\SettingsView.vue -->
 <template>
   <div id="settings-content" class="main-content">
     <header class="mb-4">
@@ -29,7 +28,6 @@
 
 <script>
 import { USER_GITHUB_USERNAME } from '../mockData';
-// import { useRouter } from 'vue-router';
 
 export default {
   name: "SettingsView",
@@ -40,9 +38,8 @@ export default {
   },
   methods: {
     handleGitHubLogout() {
-      const userProfileLogout = document.querySelector("#user-profile-logout");
-      if (userProfileLogout) {
-        userProfileLogout.click(); // 로그아웃 버튼 클릭
+      if (this.$refs.userProfileLogout) {
+        this.$refs.userProfileLogout.click(); // 로그아웃 버튼 클릭
       }
       alert("로그아웃 되었습니다.");
       this.githubUsername = null; // 사용자 이름 초기화
